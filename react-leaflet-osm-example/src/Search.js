@@ -5,6 +5,7 @@ const Search = ({ onSearch }) => {
     const [query, setQuery] = useState('');
     const handleInput = (event) => {
         setQuery(event.target.value);
+        if (event.key === 'Enter') onSearch(query);
     }
     const handleClick = () => {
         onSearch(query);
